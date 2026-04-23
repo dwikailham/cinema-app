@@ -12,7 +12,7 @@ export function SeatButton({ seat, isSelected, onToggle }: SeatButtonProps) {
   const isBooked = seat.status === "booked";
 
   let buttonClass =
-    "w-8 h-8 sm:w-9 sm:h-9 rounded-t-lg text-xs font-semibold transition-all duration-150 border focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-[#0a0a0f]";
+    "w-10 h-10 md:w-12 md:h-12 rounded-[8px] text-xs md:text-sm font-bold transition-all duration-150 border focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-[#0a0a0f]";
 
   if (isBooked) {
     buttonClass +=

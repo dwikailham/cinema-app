@@ -21,7 +21,8 @@ export function SeatMap({
   return (
     <div className="space-y-6 flex flex-col items-center">
       {/* Seats Grid */}
-      <div className="space-y-3 w-full max-w-2xl px-2">
+      <div className="w-full overflow-x-auto no-scrollbar py-4">
+        <div className="space-y-4 min-w-[500px] md:min-w-none px-4 flex flex-col items-center mx-auto">
         {rows.map((row) => (
           <div key={row} className="flex items-center gap-2 sm:gap-4 w-full">
             <div className="w-6 flex shrink-0 justify-end">
@@ -31,7 +32,7 @@ export function SeatMap({
             </div>
             
             <div
-              className="flex gap-2 lg:gap-3 flex-1 justify-center"
+              className="flex gap-3 lg:gap-4 flex-1 justify-center"
               style={{
                 display: "grid",
                 gridTemplateColumns: `repeat(${seatsPerRow}, minmax(0, 1fr))`,
@@ -59,8 +60,8 @@ export function SeatMap({
                       disabled={isBooked}
                       onClick={() => onToggleSeat(seat.id)}
                       className={`
-                        w-full aspect-square rounded-[4px] sm:rounded-[6px] border transition-all duration-200
-                        flex flex-col items-center justify-center p-0.5 relative group overflow-hidden
+                        w-full aspect-square rounded-[6px] sm:rounded-[8px] border transition-all duration-200
+                        flex flex-col items-center justify-center p-1 relative group overflow-hidden
                         ${stateClass}
                         ${isSelected ? "text-white" : isBooked ? "text-[#4a4a68]" : "text-[#a0a0b8] hover:text-[#f1f1f8]"}
                       `}
@@ -74,6 +75,7 @@ export function SeatMap({
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

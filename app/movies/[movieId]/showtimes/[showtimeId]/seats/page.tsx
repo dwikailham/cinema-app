@@ -2,7 +2,7 @@
 
 import { useEffect, useState, use } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, Info, Armchair, ArrowRight } from "lucide-react";
+import { ChevronLeft, Info, Armchair, ArrowRight, AlertTriangle } from "lucide-react";
 import { AuthGuard } from "@/components/layout/AuthGuard";
 import { Button } from "@/components/ui/Button";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
@@ -37,7 +37,7 @@ export default function SeatSelectionPage({ params }: SeatSelectionPageProps) {
         const data = await res.json();
 
         if (data.success) {
-          setMovie(data.data.showtime.movie); // Assuming API returns this or I can use the ID
+          setMovie(data.data.movie);
           setShowtime(data.data.showtime);
           setSeats(data.data.layout.seats);
           setSeatsPerRow(data.data.layout.seatsPerRow);

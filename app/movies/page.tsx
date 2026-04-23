@@ -7,6 +7,7 @@ import { MovieCard } from "@/components/movies/MovieCard";
 import { SearchBar } from "@/components/movies/SearchBar";
 import { GenreFilter } from "@/components/movies/GenreFilter";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
+import { Button } from "@/components/ui/Button";
 import type { Movie } from "@/types";
 
 export default function MovieListingPage() {
@@ -47,7 +48,7 @@ export default function MovieListingPage() {
 
   return (
     <AuthGuard>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 space-y-8 md:space-y-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-10 md:py-16 space-y-16 md:space-y-24">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-gradient-to-br from-[#12121c] via-[#0a0a0f] to-[#12121c] p-6 md:p-10 rounded-[2rem] border border-[#2a2a3e] shadow-2xl overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#e63946]/5 blur-[100px] -mr-48 -mt-48 group-hover:bg-[#e63946]/10 transition-colors duration-1000" />
@@ -69,25 +70,25 @@ export default function MovieListingPage() {
             </p>
           </div>
 
-          <div className="relative z-10 w-full lg:w-96 glass-card p-2 rounded-2xl border-[#3a3a52]/30 mt-6 lg:mt-0">
-            <SearchBar value={search} onChange={setSearch} />
+          <div className="relative z-10 w-full lg:w-[450px] glass-card p-3 rounded-2xl border-[#3a3a52]/30 mt-10 lg:mt-0 shadow-2xl">
+            <SearchBar value={search} onChange={setSearch} placeholder="Search for blockbusters..." />
           </div>
         </div>
 
         {/* Filters Area */}
-        <div className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#1e1e2e] flex items-center justify-center border border-[#3a3a52]">
-                <Filter size={16} className="text-[#a0a0b8]" />
+        <div className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#1e1e2e] flex items-center justify-center border border-[#3a3a52] shadow-lg">
+                <Filter size={20} className="text-[#a0a0b8]" />
               </div>
-              <h2 className="text-lg font-bold text-[#f1f1f8]">Filter Movies</h2>
+              <h2 className="text-2xl font-black text-[#f1f1f8] tracking-tight">Browse Genres</h2>
             </div>
-            <p className="text-sm text-[#6b6b88] font-medium uppercase tracking-wider">
-              Showing {movies.length} results
+            <p className="text-xs text-[#6b6b88] font-black uppercase tracking-[0.2em] bg-[#12121c] px-4 py-2 rounded-full border border-[#2a2a3e]">
+              {movies.length} Movies Found
             </p>
           </div>
-          <div className="bg-[#12121c]/30 p-1.5 rounded-full border border-[#2a2a3e] inline-block max-w-full overflow-x-auto no-scrollbar">
+          <div className="bg-[#12121c]/50 p-2 rounded-2xl border border-[#2a2a3e] inline-block max-w-full overflow-x-auto no-scrollbar shadow-inner">
             <GenreFilter genres={genres} selected={genre} onSelect={setGenre} />
           </div>
         </div>

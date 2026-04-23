@@ -27,6 +27,7 @@ export interface Showtime {
   time: string;   // "HH:mm"
   studioId: string;
   basePrice: number;
+  movieTitle?: string;
 }
 
 export interface Movie {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Ticket, Calendar, Clock, Armchair, Trash2, Info, CheckCircle, ArrowRight } from "lucide-react";
 import { AuthGuard } from "@/components/layout/AuthGuard";
@@ -11,7 +11,7 @@ import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 import { formatPrice } from "@/lib/pricing";
 import type { Booking } from "@/types";
 
-export default function MyBookingsPage() {
+function BookingsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const showSuccess = searchParams.get("success") === "true";
@@ -160,7 +160,7 @@ export default function MyBookingsPage() {
                             <h3 className="text-3xl font-black text-[#f1f1f8] tracking-tight leading-none">{booking.movieTitle}</h3>
                             <Badge
                               label={booking.status === "confirmed" ? "Active" : "Cancelled"}
-                              variant={booking.status === "confirmed" ? "default" : "secondary"}
+                              variant={booking.status === "confirmed" ? "status-confirmed" : "status-cancelled"}
                               className="text-xs uppercase font-black"
                             />
                           </div>
@@ -226,5 +226,13 @@ export default function MyBookingsPage() {
         </div>
       </div>
     </AuthGuard>
+  );
+}
+
+export default function MyBookingsPage() {
+  return (
+    <Suspense fallback={<LoadingSpinner size="lg" />}>
+      <BookingsContent />
+    </Suspense>
   );
 }

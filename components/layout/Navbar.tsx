@@ -18,8 +18,8 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link
             href="/movies"
@@ -39,7 +39,7 @@ export function Navbar() {
           </Link>
 
           {/* Nav Links */}
-          <div className="flex items-center bg-[#12121c]/50 p-1.5 rounded-2xl border border-white/5 backdrop-blur-md overflow-x-auto no-scrollbar max-w-full">
+          <div className="flex items-center bg-[#12121c]/50 p-1.5 rounded-2xl border border-white/5 backdrop-blur-md overflow-x-auto no-scrollbar max-w-[50%] sm:max-w-none">
             <Link
               href="/movies"
               className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider text-[#a0a0b8] hover:text-[#f1f1f8] hover:bg-[#1e1e2e] transition-all whitespace-nowrap"
@@ -59,8 +59,8 @@ export function Navbar() {
           {/* User & Logout */}
           <div className="flex items-center gap-4 shrink-0">
             {user && (
-              <div className="hidden lg:flex items-center gap-3 pr-4 border-r border-white/5">
-                <div className="text-right">
+              <div className="flex items-center gap-3 md:pr-4 md:border-r md:border-white/5">
+                <div className="hidden md:block text-right">
                   <p className="text-xs text-[#6b6b88] font-bold uppercase tracking-widest">Active Member</p>
                   <p className="text-sm text-[#f1f1f8] font-black">{user.name}</p>
                 </div>

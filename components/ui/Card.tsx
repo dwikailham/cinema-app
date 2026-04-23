@@ -23,7 +23,7 @@ export function Card({ children, className = "", onClick, hoverable = false }: C
 }
 
 export function CardHeader({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`p-6 space-y-1.5 ${className}`}>{children}</div>;
+  return <div className={`p-8 space-y-2 ${className}`}>{children}</div>;
 }
 
 export function CardTitle({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -35,7 +35,7 @@ export function CardDescription({ children, className = "" }: { children: ReactN
 }
 
 export function CardContent({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`p-6 pt-0 ${className}`}>{children}</div>;
+  return <div className={`p-8 pt-0 ${className}`}>{children}</div>;
 }
 
 export function CardFooter({ children, className = "" }: { children: ReactNode; className?: string }) {

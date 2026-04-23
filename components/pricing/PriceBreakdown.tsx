@@ -3,6 +3,7 @@
 import { Info, Users, Calendar, Clock, MapPin, Tag } from "lucide-react";
 import type { PriceBreakdown as PriceBreakdownType } from "@/types";
 import { formatPrice } from "@/lib/pricing";
+import { Badge } from "@/components/ui/Badge";
 
 interface PriceBreakdownProps {
   breakdown: PriceBreakdownType;

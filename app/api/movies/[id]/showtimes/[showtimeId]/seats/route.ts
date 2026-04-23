@@ -44,7 +44,11 @@ export async function GET(
   return NextResponse.json({
     success: true,
     data: {
-      showtime,
+      showtime: {
+        ...showtime,
+        movieTitle: movie.title,
+      },
+      movie,
       studio: { id: showtime.studioId },
       layout,
     },
