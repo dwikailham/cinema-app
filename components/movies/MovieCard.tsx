@@ -55,8 +55,8 @@ export function MovieCard({ movie }: MovieCardProps) {
       </div>
 
       <CardContent className="p-8 space-y-5 relative z-20 flex-1 flex flex-col justify-between">
-        <div className="space-y-4">
-          <h3 className="text-2xl font-black text-[#f1f1f8] leading-tight group-hover:text-[#e63946] transition-colors line-clamp-1">
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-[#f1f1f8] leading-tight group-hover:text-[#e63946] transition-colors line-clamp-1">
             {movie.title}
           </h3>
           <p className="text-sm text-[#a0a0b8] line-clamp-2 leading-relaxed">
@@ -66,13 +66,13 @@ export function MovieCard({ movie }: MovieCardProps) {
         
         <div className="space-y-4 pt-2">
           <div className="flex items-center justify-between text-[#a0a0b8]">
-            <div className="flex items-center gap-2">
-              <Clock size={16} className="text-[#6b6b88]" />
-              <span className="text-sm font-bold">{movie.duration} mins</span>
+            <div className="flex items-center gap-1.5">
+              <Clock size={14} className="text-[#6b6b88]" />
+              <span className="text-xs font-medium">{movie.duration} mins</span>
             </div>
             <div className="text-right">
-              <span className="text-[10px] text-[#6b6b88] font-black uppercase tracking-[0.2em] block mb-1">Starting from</span>
-              <span className="text-[#ffd166] font-black text-2xl">
+              <span className="text-xs text-[#6b6b88] font-bold uppercase tracking-wider block">Starting from</span>
+              <span className="text-[#ffd166] font-black text-lg">
                 {new Intl.NumberFormat("id-ID", {
                   style: "currency",
                   currency: "IDR",

@@ -115,22 +115,22 @@ export default function ConfirmBookingPage({ params }: ConfirmBookingPageProps) 
 
   return (
     <AuthGuard>
-      <div className="max-w-4xl mx-auto px-4 py-12 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div className="max-w-4xl mx-auto px-4 py-12 md:py-20 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <div className="flex flex-col items-center text-center space-y-2">
           <div className="w-16 h-16 bg-[#e63946]/10 rounded-full flex items-center justify-center border border-[#e63946]/20 mb-2">
             <CheckCircle size={32} className="text-[#e63946]" />
           </div>
-          <h1 className="text-3xl font-black text-[#f1f1f8] tracking-tight">Review Your Booking</h1>
-          <p className="text-[#a0a0b8]">Please double-check your order details before confirming</p>
+          <h1 className="text-3xl md:text-4xl font-black text-[#f1f1f8] tracking-tight">Review Your Booking</h1>
+          <p className="text-base text-[#a0a0b8] leading-relaxed">Please double-check your order details before confirming</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left: Summary */}
           <div className="space-y-6">
             <div className="bg-[#12121c]/50 backdrop-blur-sm border border-[#2a2a3e] rounded-2xl p-6 space-y-6">
-              <div className="space-y-1">
-                <p className="text-xs text-[#e63946] font-black uppercase tracking-widest">Movie</p>
-                <h2 className="text-2xl font-bold text-[#f1f1f8]">{showtime.movieTitle}</h2>
+              <div className="space-y-2">
+                <p className="text-sm text-[#e63946] font-black uppercase tracking-widest">Movie</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#f1f1f8] leading-tight">{showtime.movieTitle}</h2>
               </div>
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#2a2a3e]">

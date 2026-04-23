@@ -48,9 +48,9 @@ export default function MovieListingPage() {
 
   return (
     <AuthGuard>
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-10 md:py-16 space-y-16 md:space-y-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 space-y-10 md:space-y-16">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-gradient-to-br from-[#12121c] via-[#0a0a0f] to-[#12121c] p-6 md:p-10 rounded-[2rem] border border-[#2a2a3e] shadow-2xl overflow-hidden relative group">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-gradient-to-br from-[#12121c] via-[#0a0a0f] to-[#12121c] p-8 md:p-14 rounded-[2.5rem] border border-[#2a2a3e] shadow-2xl overflow-hidden relative group">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#e63946]/5 blur-[100px] -mr-48 -mt-48 group-hover:bg-[#e63946]/10 transition-colors duration-1000" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-[100px] -ml-32 -mb-32" />
           
@@ -59,36 +59,36 @@ export default function MovieListingPage() {
               <Film size={14} className="text-[#e63946]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">Premiere Collection</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#f1f1f8] leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#f1f1f8] leading-[1.05]">
               Experience Cinema <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e63946] to-[#ff6b6b]">
                 Like Never Before
               </span>
             </h1>
-            <p className="text-[#a0a0b8] text-sm md:text-lg max-w-md leading-relaxed">
+            <p className="text-[#a0a0b8] text-base md:text-lg max-w-md leading-relaxed">
               Book the best seats for the latest blockbusters in premium studios with high-fidelity sound.
             </p>
           </div>
 
-          <div className="relative z-10 w-full lg:w-[450px] glass-card p-3 rounded-2xl border-[#3a3a52]/30 mt-10 lg:mt-0 shadow-2xl">
-            <SearchBar value={search} onChange={setSearch} placeholder="Search for blockbusters..." />
+          <div className="relative z-10 w-full lg:w-96 glass-card p-3 rounded-2xl border-[#3a3a52]/30 mt-6 lg:mt-0">
+            <SearchBar value={search} onChange={setSearch} />
           </div>
         </div>
 
         {/* Filters Area */}
-        <div className="space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-[#1e1e2e] flex items-center justify-center border border-[#3a3a52] shadow-lg">
-                <Filter size={20} className="text-[#a0a0b8]" />
+        <div className="space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-[#1e1e2e] flex items-center justify-center border border-[#3a3a52]">
+                <Filter size={16} className="text-[#a0a0b8]" />
               </div>
-              <h2 className="text-2xl font-black text-[#f1f1f8] tracking-tight">Browse Genres</h2>
+              <h2 className="text-lg font-bold text-[#f1f1f8]">Filter Movies</h2>
             </div>
-            <p className="text-xs text-[#6b6b88] font-black uppercase tracking-[0.2em] bg-[#12121c] px-4 py-2 rounded-full border border-[#2a2a3e]">
-              {movies.length} Movies Found
+            <p className="text-sm text-[#6b6b88] font-medium uppercase tracking-wider">
+              Showing {movies.length} results
             </p>
           </div>
-          <div className="bg-[#12121c]/50 p-2 rounded-2xl border border-[#2a2a3e] inline-block max-w-full overflow-x-auto no-scrollbar shadow-inner">
+          <div className="bg-[#12121c]/30 p-1.5 rounded-full border border-[#2a2a3e] inline-block max-w-full overflow-x-auto no-scrollbar">
             <GenreFilter genres={genres} selected={genre} onSelect={setGenre} />
           </div>
         </div>

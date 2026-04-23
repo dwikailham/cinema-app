@@ -83,7 +83,7 @@ export default function MovieDetailPage({ params }: MovieDetailPageProps) {
           </div>
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-14">
           {/* Back Button */}
           <button
             onClick={() => router.push("/movies")}
@@ -152,7 +152,7 @@ export default function MovieDetailPage({ params }: MovieDetailPageProps) {
                 <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-[#f1f1f8] leading-[0.9]">
                   {movie.title}
                 </h1>
-                <p className="text-lg md:text-xl text-[#a0a0b8] leading-relaxed max-w-3xl">
+                <p className="text-lg md:text-xl text-[#a0a0b8] leading-[1.8] max-w-3xl">
                   {movie.synopsis}
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default function MovieDetailPage({ params }: MovieDetailPageProps) {
                             <button
                               key={st.id}
                               onClick={() => router.push(`/movies/${movie.id}/showtimes/${st.id}/seats`)}
-                              className="group relative p-6 bg-[#12121c]/40 border border-[#2a2a3e] rounded-2xl text-center transition-all duration-300 hover:border-[#e63946]/50 hover:bg-[#e63946]/5 hover:-translate-y-1"
+                              className="group relative p-7 bg-[#12121c]/40 border border-[#2a2a3e] rounded-2xl text-center transition-all duration-300 hover:border-[#e63946]/50 hover:bg-[#e63946]/5 hover:-translate-y-1"
                             >
                               <span className="block text-2xl font-black text-[#f1f1f8] group-hover:text-[#e63946] transition-colors mb-1">
                                 {st.time}

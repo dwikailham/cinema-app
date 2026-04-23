@@ -25,8 +25,8 @@ export function SearchBar({
         onChange={(evt) => onChange(evt.target.value)}
         placeholder={placeholder}
         className="w-full bg-[#1e1e2e] border border-[#3a3a52] rounded-xl
-          pl-9 pr-9 py-2.5 text-sm text-[#f1f1f8] placeholder-[#6b6b88]
-          focus:outline-none focus:border-[#e63946] focus:ring-1 focus:ring-[#e63946]
+          pl-11 pr-10 py-3.5 text-base text-[#f1f1f8] placeholder-[#6b6b88]
+          focus:outline-none focus:border-[#e63946] focus:ring-2 focus:ring-[#e63946]/20
           transition-all duration-200"
       />
       {value && (

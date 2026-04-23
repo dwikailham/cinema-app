@@ -115,7 +115,7 @@ export default function SeatSelectionPage({ params }: SeatSelectionPageProps) {
 
   return (
     <AuthGuard>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
@@ -126,8 +126,8 @@ export default function SeatSelectionPage({ params }: SeatSelectionPageProps) {
               <ChevronLeft size={16} />
               <span className="text-sm">Back to Movie</span>
             </button>
-            <h1 className="text-3xl font-black text-[#f1f1f8]">Select Your Seats</h1>
-            <p className="text-[#6b6b88] text-sm">
+            <h1 className="text-3xl md:text-4xl font-black text-[#f1f1f8] leading-tight">Select Your Seats</h1>
+            <p className="text-[#6b6b88] text-base">
               {showtime.date} at <span className="text-[#ffd166] font-bold">{showtime.time}</span> • Studio {showtime.studioId}
             </p>
           </div>

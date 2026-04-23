@@ -16,7 +16,7 @@ export function PriceBreakdown({ breakdown, seatCount }: PriceBreakdownProps) {
   const hasTimeMarkup = breakdown.timeMarkup > 1;
 
   return (
-    <div className="bg-[#12121c]/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 space-y-8 shadow-2xl">
+    <div className="bg-[#12121c]/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-10 space-y-8 shadow-2xl">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-black text-[#f1f1f8] flex items-center gap-3">
           <Tag size={20} className="text-[#e63946]" />
@@ -27,9 +27,9 @@ export function PriceBreakdown({ breakdown, seatCount }: PriceBreakdownProps) {
 
       <div className="space-y-4">
         {/* Base Price */}
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-bold text-[#6b6b88] uppercase tracking-widest">Base Fare</span>
-          <span className="text-sm font-bold text-[#f1f1f8]">
+        <div className="flex items-center justify-between py-1">
+          <span className="text-sm font-semibold text-[#6b6b88] uppercase tracking-widest">Base Fare</span>
+          <span className="text-base font-bold text-[#f1f1f8]">
             {formatPrice(breakdown.basePrice * seatCount)}
           </span>
         </div>
@@ -44,14 +44,14 @@ export function PriceBreakdown({ breakdown, seatCount }: PriceBreakdownProps) {
           </div>
 
           {hasDayMarkup && (
-            <div className="flex items-center justify-between text-[11px] font-bold">
+            <div className="flex items-center justify-between text-sm font-semibold py-0.5">
               <span className="text-[#6b6b88] uppercase tracking-tighter">Weekend Markup</span>
               <span className="text-[#ffd166]">+20%</span>
             </div>
           )}
 
           {hasTimeMarkup && (
-            <div className="flex items-center justify-between text-[11px] font-bold">
+            <div className="flex items-center justify-between text-sm font-semibold py-0.5">
               <span className="text-[#6b6b88] uppercase tracking-tighter">Prime Time Surcharge</span>
               <span className="text-[#ffd166]">+15%</span>
             </div>
